@@ -34,13 +34,15 @@ except ImportError:
 import builtins
 
 def map(line):
-    pass
-    
+   a = line.split(' ')
+   if len(a) == 10:
+       emit(str(a[8]),"1")
+ 
 def reduce(key, values):
+    emit(key,str(sum([int(i) for i in values])))    
     pass
 
 # Common library code follows:
-
 def emit(key, value):
     """
     Emits a key->value pair.  Key and value should be strings.
